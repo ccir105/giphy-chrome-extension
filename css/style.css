@@ -1,0 +1,166 @@
+
+ canvas {
+    display: block;
+  }
+  
+  .turkey {
+      -webkit-box-flex: 0;
+              flex: 0 0 auto;
+      position: relative;
+      width: 200px;
+      height: 175px;
+      border-radius: 200px 200px 0 0;
+      background: -webkit-gradient(linear, left top, right top, from(rgba(184,136,73,1)),color-stop(50%, rgba(184,136,73,1)),color-stop(50%, rgba(136,95,60,1)),to(rgba(136,95,60,1)));
+      background: linear-gradient(to right, rgba(184,136,73,1) 0%,rgba(184,136,73,1) 50%,rgba(136,95,60,1) 50%,rgba(136,95,60,1) 100%);
+    }
+      
+      .turkey::before, .turkey::after {
+        position: absolute;
+        top: 75px;
+        width: 20px;
+        height: 20px;
+        background: #222;
+        content: "";
+        -webkit-clip-path: circle(50% at 50% 50%);
+                clip-path: circle(50% at 50% 50%);
+      }
+      
+      .turkey::before {
+        left: 55px;
+      }
+      
+      .turkey::after {
+        right: 55px;
+      }
+      
+      .turkey .face {
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 50px;
+        height: 30px;
+        background: -webkit-gradient(linear, left top, right top, from(rgba(252,205,14,1)),color-stop(50%, rgba(252,205,14,1)),color-stop(50%, rgba(241,150,37,1)),to(rgba(241,150,37,1)));
+        background: linear-gradient(to right, rgba(252,205,14,1) 0%,rgba(252,205,14,1) 50%,rgba(241,150,37,1) 50%,rgba(241,150,37,1) 100%);
+        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+      
+      .turkey .hat {
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 400px;
+        height: 155px;
+        background: -webkit-gradient(linear, left top, right top, from(rgba(49, 46, 54,1)),color-stop(50%, rgba(49, 46, 54,1)),color-stop(50%, rgba(23, 20, 27,1)),to(rgba(23, 20, 27,1)));
+        background: linear-gradient(to right, rgba(49, 46, 54,1) 0%,rgba(49, 46, 54,1) 50%,rgba(23, 20, 27,1) 50%,rgba(23, 20, 27,1) 100%);
+        -webkit-clip-path: polygon(34% 0, 68% 0, 72% 84%, 87% 84%, 87% 100%, 15% 100%, 15% 84%, 30% 84%);
+                clip-path: polygon(34% 0, 68% 0, 72% 84%, 87% 84%, 87% 100%, 15% 100%, 15% 84%, 30% 84%);
+      }
+      
+      .turkey .hat .buckle {
+          position: relative;
+          width: 179px;
+          height: 34px;
+          margin: 67px auto;
+          background: #d12836;
+        }
+      
+      .turkey .hat .buckle::before {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 30px;
+            height: 30px;
+            content: "";
+            border: 8px solid #fcce0d;
+            background: transparent;
+          }
+      
+      @media screen and (max-height: 490px) {.turkey {
+        margin: 150px auto 25px
+    }
+      }
+    
+    html, body {
+      height: 100%;
+    }
+    
+    @media screen and (max-height: 490px) {
+    
+    html, body {
+        height: auto
+    }
+      }
+    
+    body {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
+      flex-shrink: 0;
+      -webkit-box-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+              align-items: center;
+      background: radial-gradient(ellipse at center, #343436 0%,#1d1f20 100%);
+    }
+    
+    @media screen and (max-height: 490px) {
+    
+    body {
+        display: block
+    }
+      }
+    
+    .view-collection {
+      -webkit-box-flex: 0;
+              flex: 0 0 auto;
+      margin: 30px 0 0;
+      color: #fff;
+      text-align: center;
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+    
+    @media screen and (max-height: 490px) {
+    
+    .view-collection {
+        margin: 25px auto
+    }
+      }
+    
+    .view-collection span {
+        font-size: 13px;
+      }
+    
+    .view-collection .love {
+        color: #cc0000;
+      }
+    
+    .view-collection a {
+        color: #d12836;
+        text-decoration: none;
+        -webkit-transition: all 0.7s;
+        transition: all 0.7s;
+      }
+    
+    .view-collection a:hover, .view-collection a:focus {
+          color: #fff;
+        }
+    
+      .message-box {
+        color: white;
+        text-align: center;
+        padding: 10px;
+        background: linear-gradient(to right, rgba(49, 46, 54,1) 0%,rgba(49, 46, 54,1) 50%,rgba(23, 20, 27,1) 50%,rgba(23, 20, 27,1) 100%);
+        font-size: 24px;
+        width: 100%;
+        transform: translate3d(-33px, 19px, 19px);
+        border-radius: 25%;
+      }

@@ -1,0 +1,11 @@
+{
+    "name": "Covid Extension",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "This is for learning",
+    "homepage_url": "https://idonthavewebsite.com",
+    "chrome_url_overrides": {
+        "newtab": "test.html"
+    },
+    "content_security_policy": "unsafe-inline sha256-5wz4cElwBT+x+NKxHJ9MDkrBQzDiuXZ7BhGSwTj17tw="
+}
