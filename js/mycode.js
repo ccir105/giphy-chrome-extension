@@ -8,11 +8,10 @@ var inputBox = document.querySelector('.country-input')
 inputBox.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         document.querySelector('.message-box .here-man').innerText = inputBox.value
-        var userValue = inputBox.value
-        // inputBox.value = ""
-
-        //we do search in giphy
-        doSomething(userValue)
+        var userValue = inputBox.value || puranoKuraharu
+        inputBox.value = ""
+        puranoKuraharu = userValue
+        doSomething()
     }
 });
 
@@ -25,12 +24,46 @@ document.querySelector('.last-resort').addEventListener("load", function () {
     loadingNode.innerText = puranoKuraharu
 })
 
-function doSomething(kuraharu) {
+
+var preInit = () => {
+
+    var tags = {
+        '7AM': 'Fresh Day',
+        '8AM': 'Burshing Teeth',
+        '9AM': 'Food',
+        '10AM': 'Cigar',
+        '11AM': 'Reading A Book',
+        '1PM': 'Guitar Time',
+        '2PM': 'Better Youtube',
+        '3PM': 'Hungry',
+        '4PM': 'Pump The Blood',
+        '5PM': 'No Booz',
+        '6PM': 'Hungry Again',
+        '7PM': 'TV TIme',
+        '8PM': 'Pubg',
+        '9PM': 'Crypto',
+        '10PM': 'Good Night'
+    }
+
+
+    var currentState = (new Date()).toLocaleString([], { hour12: true}).split(',')[1].match(/^\s?([0-9]+).*\s([A-Z]+)$/)
+    var whatToDo = currentState[1] + currentState[2]
+    puranoKuraharu = tags[whatToDo]
+    doSomething()
+
+    setInterval(() => {
+        doSomething()
+    }, 1000 * 10)
+
+}
+
+function doSomething() {
     //we do this giphy api with our api key
-    var gify = GiphyAPI(apiKey)
-    puranoKuraharu = kuraharu
+    var gify = GiphyAPI(
+        apikey
+    )
     loadingNode.innerText = "Loading.."
-    gify.search(kuraharu, (e, r) => {
+    gify.search(puranoKuraharu, (e, r) => {
         var results = r.data
 
         //we get the  results, many results
@@ -59,3 +92,5 @@ function doSomething(kuraharu) {
         }
     })
 }
+
+preInit()

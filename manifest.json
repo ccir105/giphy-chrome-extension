@@ -7,5 +7,9 @@
     "chrome_url_overrides": {
         "newtab": "test.html"
     },
-    "content_security_policy": "unsafe-inline sha256-5wz4cElwBT+x+NKxHJ9MDkrBQzDiuXZ7BhGSwTj17tw="
+    "content_security_policy": "unsafe-inline sha256-5wz4cElwBT+x+NKxHJ9MDkrBQzDiuXZ7BhGSwTj17tw=",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      }
 }

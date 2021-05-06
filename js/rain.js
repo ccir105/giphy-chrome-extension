@@ -35,22 +35,6 @@ function draw() {
     }
 }
 
-var c = document.querySelector('#coldturkey');
-var tt = null;
-
-window.addEventListener('mousemove',
-    function (e) {
-        if (tt) {
-            clearTimeout(tt);
-        }
-
-        tt = setTimeout(() => {
-            const { movementX, movementY } = e;
-            // console.log(e)
-            c.style.transform = `translate(${movementX}px,${movementY}px)`;
-        })
-    })
-
 // Loop the animation
 setInterval(draw, 45);
 

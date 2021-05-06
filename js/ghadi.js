@@ -29,3 +29,20 @@ function animate() {
     seconds.style.transform = `rotateZ(${secs}deg)`;
 }
 animate()
+
+var a = function () {
+    var timer = null
+    var textArea = document.querySelector('textarea')
+    if(localStorage.textArea) {
+        textArea.value = localStorage.textArea
+    }
+    document.querySelector('textarea').oninput = () => {
+        if (timer) {
+            clearTimeout()
+        }
+        timer = setTimeout(() => {
+            localStorage.textArea = textArea.value
+        },500)
+    }
+}
+a()
